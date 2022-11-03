@@ -1,14 +1,10 @@
 
 _Admin.Ranks = { --> Vous pouvez crée autant de grade que vous le souhaité
-    {name = "Administrator", grade = 3},
-    {name = "Moderator", grade = 2},
-    {name = "Helpeur", grade = 1},
-    {name = "Assistant", grade = 0},
+    {name = "Dev", grade = 3},
+    {name = "Superadmin", grade = 2},
+    {name = "Admin", grade = 1},
+    {name = "Modérateur", grade = 0},
 }
-
-
-
-
 
 _Admin.Permissions = {
 
