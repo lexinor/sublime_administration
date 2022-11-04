@@ -1,9 +1,9 @@
 
 _Admin.Ranks = { --> Vous pouvez crée autant de grade que vous le souhaité
-    {name = "Dev", grade = 3},
-    {name = "Superadmin", grade = 2},
-    {name = "Admin", grade = 1},
-    {name = "Modérateur", grade = 0},
+    {name = "dev", grade = 3},
+    {name = "superadmin", grade = 2},
+    {name = "admin", grade = 1},
+    {name = "modérateur", grade = 0},
 }
 
 _Admin.Permissions = {
@@ -68,10 +68,10 @@ _Admin.Permissions = {
             Repair = {3;2;1};
             Clean = {3;2;1};
             Plate = {3;2};
-            OpenDoords = {3;2;1};
-            CloseDoords = {3;2;1};
-            ChangeColor = {3;2;1};
-            BoostVehicle = {3;2};
+            OpenDoords = {3;};
+            CloseDoords = {3;};
+            ChangeColor = {3;};
+            BoostVehicle = {3;};
         };};
         --
         SaveVehicle = {3;2;1};
@@ -80,10 +80,10 @@ _Admin.Permissions = {
     };};
     
 
-    Button_ServerSystem = { access = {3;2;1}; inside = {
-        WeatherOptions = {3;2};
+    Button_ServerSystem = { access = {3;2;1;0}; inside = {
+        WeatherOptions = {3};
         ReportOptions = {access = {3;2;1}; inside = {
-            ClearReports = {3;2};
+            ClearReports = {3;2;1;0};
         }};
         ClearAllZone = {3;2;1};
         ClearVehicles = {3;2;1};
@@ -93,9 +93,9 @@ _Admin.Permissions = {
     };};
 
 
-    Button_Developpement = { access = {3;2}; inside = {
-        DevMode = {3;2};
-        CopyCoords = {3;2};
+    Button_Developpement = { access = {3}; inside = {
+        DevMode = {3};
+        CopyCoords = {3};
         LazerInfo = {3};
     };};
 
