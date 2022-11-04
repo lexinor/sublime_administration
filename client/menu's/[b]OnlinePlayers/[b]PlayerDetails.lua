@@ -123,7 +123,7 @@ function _Admin.Panel:PlayerDetails(rank, serverId, localId, name, jobName, grad
             _Admin.Print("[^1".._.rank.name.." ^7- ^2"..cache.playerName.."^7] Tuer → [^5".._name.."^7]")
             _Admin.SendServerLogs("[".._.rank.name.." - "..cache.playerName.."] Tuer → [".._name.."]")
             SetEntityHealth(GetPlayerPed(localId), 0)
-            TriggerServerEvent(_Admin.Prefix.."teleport", serverId , 2)
+            --TriggerServerEvent(_Admin.Prefix.."teleport", serverId , 2)
 
             ESX.ShowNotification("Vous avez tuer ~g~".._name)
         end
