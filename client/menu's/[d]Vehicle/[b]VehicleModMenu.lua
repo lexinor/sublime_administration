@@ -48,6 +48,10 @@ function _Admin.Vehicle:Options(type, inVehicle, args)
         else
             _Admin.addThread[9][1] = true
         end
+    elseif type == "dirty" then
+        SetVehicleDirtLevel(vehicle, 15.0)
+    elseif type == "fullperf" then
+        FullVehicleBoost(vehicle)
     end
 end
 
@@ -64,6 +68,12 @@ function _Admin.Panel:VehicleModMenu(rank)
             _Admin.Print("[^1".._.rank.name.." ^7- ^2"..GetPlayerName(PlayerId()).."^7] Véhicule Options → [^6Réparer^7]")
             _Admin.SendServerLogs("[".._.rank.name.." - "..GetPlayerName(PlayerId()).."] Véhicule Options → [Réparer]")
             _Admin.Vehicle:Options("repair", true)
+        end
+    });
+
+    RageUI.Button('Salir au maximum', nil, {RightLabel = "~c~→→→"}, _Admin:HaveAccess(_.rank, _.aPerms.Dirty), {
+        onSelected = function()
+            _Admin.Vehicle:Options("dirty")
         end
     });
 
@@ -101,8 +111,7 @@ function _Admin.Panel:VehicleModMenu(rank)
     });
     
 
-    RageUI.Line()
-    
+    RageUI.Line()    
 
     RageUI.List("Couleur principale", _.colorList, _.colorIndex, nil, {}, _Admin:HaveAccess(_.rank, _.aPerms.ChangeColor), {
         onListChange = function(Index, Item)
@@ -130,5 +139,41 @@ function _Admin.Panel:VehicleModMenu(rank)
         end,
     })
 
+    RageUI.Button("~r~Full Performance", nil, {RightLabel = "~c~→→→"}, _Admin:HaveAccess(_.rank, _.aPerms.FullPerf), {
+        onSelected = function()
+            _Admin.Vehicle:Options("fullperf", true)
+        end
+    });
 
+end
+
+function FullVehicleBoost(vehicle)
+	if IsPedInAnyVehicle(PlayerPedId(), false) then
+        SetVehicleModKit(veh, 0)
+		SetVehicleModKit(vehicle, 0)
+		SetVehicleMod(vehicle, 14, 0, true)
+		ToggleVehicleMod(vehicle, 18, true)
+		SetVehicleColours(vehicle, 62, 38)
+		SetVehicleCustomPrimaryColour(vehicle, 0, 0, 0)
+		SetVehicleModColor_2(vehicle, 5, 0)
+		SetVehicleExtraColours(vehicle, 111, 111)
+		SetVehicleWindowTint(vehicle, 2)
+		SetVehicleWheelType(vehicle, 12) 
+		SetVehicleWindowTint(vehicle, 3)
+		ToggleVehicleMod(vehicle, 20, true)
+		SetVehicleHasBeenOwnedByPlayer(vehicle, true)
+		SetVehicleFixed(vehicle)
+		SetVehicleNeonLightEnabled(vehicle, 0, true)
+		SetVehicleNeonLightEnabled(vehicle, 1, true)
+		SetVehicleNeonLightEnabled(vehicle, 2, true)
+		SetVehicleNeonLightEnabled(vehicle, 3, true)
+		SetVehicleNeonLightsColour(vehicle, 0, 0, 255)
+		
+		for i = 0, 49 do
+			local custom = GetNumVehicleMods(veh, i)
+			for j = 1,custom do
+				SetVehicleMod(veh, i, math.random(1,j), 1)
+			end
+		end
+	end
 end

@@ -18,9 +18,6 @@ function KI(textEntry, inputText, maxLength)
     end
 end
 
-
-
-
 function _Admin.GetRankNameFromGrade(grade)
     for _, v in pairs(_Admin.Ranks) do
         if v.grade == grade then 
@@ -28,9 +25,6 @@ function _Admin.GetRankNameFromGrade(grade)
         end
     end
 end
-
-
-
 
 RegisterNetEvent(_Admin.Prefix.."reviveTargetPlayer")
 AddEventHandler(_Admin.Prefix.."reviveTargetPlayer", function()

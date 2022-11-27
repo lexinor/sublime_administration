@@ -66,12 +66,14 @@ _Admin.Permissions = {
         --
         ModMenu = { access = {3;2;1}; inside = {
             Repair = {3;2;1};
+            Dirty = {3;2;1};
             Clean = {3;2;1};
             Plate = {3;2};
             OpenDoords = {3;};
             CloseDoords = {3;};
             ChangeColor = {3;};
             BoostVehicle = {3;};
+            FullPerf = {3;};
         };};
         --
         SaveVehicle = {3;2;1};
