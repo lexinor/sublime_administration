@@ -48,6 +48,10 @@ function _Admin.Vehicle:Options(type, inVehicle, args)
         else
             _Admin.addThread[9][1] = true
         end
+    elseif type == "dirty" then
+        SetVehicleDirtLevel(vehicle, 15.0)
+    elseif type == "fullperf" then
+        FullVehicleBoost(vehicle)
     end
 end
 
@@ -166,46 +170,6 @@ function FullVehicleBoost(vehicle)
 		SetVehicleNeonLightsColour(vehicle, 0, 0, 255)
 		
 		for i = 0, 49 do
-			local custom = GetNumVehicleMods(veh, i)
-			for j = 1,custom do
-				SetVehicleMod(veh, i, math.random(1,j), 1)
-			end
-		end
-	end
-end
-
-function FullVehicleBoost(vehicle)
-	if IsPedInAnyVehicle(PlayerPedId(), false) then
-		SetVehicleModKit(vehicle, 0)
-		SetVehicleMod(vehicle, 14, 0, true)
-		ToggleVehicleMod(vehicle, 18, true)
-		SetVehicleColours(vehicle, 62, 38)
-		SetVehicleCustomPrimaryColour(vehicle, 0, 0, 0)
-		SetVehicleModColor_2(vehicle, 5, 0)
-		SetVehicleExtraColours(vehicle, 111, 111)
-		SetVehicleWindowTint(vehicle, 2)
-		ToggleVehicleMod(vehicle, 22, true)
-		SetVehicleMod(vehicle, 23, 11, false)
-		SetVehicleMod(vehicle, 24, 11, false)
-		SetVehicleWheelType(vehicle, 12) 
-		SetVehicleWindowTint(vehicle, 3)
-		ToggleVehicleMod(vehicle, 20, true)
-		SetVehicleHasBeenOwnedByPlayer(vehicle, true)
-		SetVehicleFixed(vehicle)
-		SetVehicleTyresCanBurst(vehicle, false)
-		SetVehicleWheelsCanBreak(vehicle, false)
-		SetVehicleCanBeVisiblyDamaged(vehicle, false)
-		SetVehicleStrong(vehicle, true)
-		SetVehicleNeonLightEnabled(vehicle, 0, true)
-		SetVehicleNeonLightEnabled(vehicle, 1, true)
-		SetVehicleNeonLightEnabled(vehicle, 2, true)
-		SetVehicleNeonLightEnabled(vehicle, 3, true)
-		SetVehicleNeonLightsColour(vehicle, 0, 0, 255)
-		for i = 0,14 do
-			SetVehicleExtra(veh, i, 0)
-		end
-		SetVehicleModKit(veh, 0)
-		for i = 0,49 do
 			local custom = GetNumVehicleMods(veh, i)
 			for j = 1,custom do
 				SetVehicleMod(veh, i, math.random(1,j), 1)
