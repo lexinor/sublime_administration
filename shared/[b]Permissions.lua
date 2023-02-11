@@ -8,7 +8,7 @@ _Admin.Ranks = { --> Vous pouvez crée autant de grade que vous le souhaité
 
 _Admin.Permissions = {
 
-    NoClip = {3;2;1};
+    NoClip = {3;2;1;0};
     SetJob = {3;2;1};
     GiveVehicle = {3,2,1};
 
@@ -19,12 +19,12 @@ _Admin.Permissions = {
             Bring = {3;2;1};
             Private_Message = {3;2;1};
             GPS_View = {3;2;1};
-            Heal = {3;2};
-            Revive = {3;2};
-            Kill = {3;2};
+            Heal = {3;2;1};
+            Revive = {3;2;1};
+            Kill = {3;2;1};
             Kick = {3;2;1};
-            Ban = {3};
-            AddPermissions = {3};
+            Ban = {3;2;1};
+            AddPermissions = {3;2;1};
         };};
     };};
 
