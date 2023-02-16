@@ -162,7 +162,7 @@ function _Admin.Panel:PlayerDetails(rank, serverId, localId, name, jobName, grad
     
     RageUI.Line()
 
-    RageUI.Button("~b~Ajouté des permission au joueur",  nil, {RightLabel = "~c~→→→"}, _Admin:HaveAccess(_.rank, _.aPerms.AddPermissions), {
+    RageUI.Button("~b~Ajouté des permissions au joueur (Menu Admin)",  nil, {RightLabel = "~c~→→→"}, _Admin:HaveAccess(_.rank, _.aPerms.AddPermissions), {
         onSelected = function()
             local rankNumber = KI("RANK NUMBER", "", 150)
             rankNumber = tonumber(rankNumber)
@@ -177,6 +177,30 @@ function _Admin.Panel:PlayerDetails(rank, serverId, localId, name, jobName, grad
                 end
             else
                 ESX.ShowNotification("~r~Quantité invalide")
+            end 
+        end
+    });
+
+    RageUI.Button("SetGroup", "Attribuer un groupe au joueur", {RightLabel = "~c~→→→"}, _Admin:HaveAccess(_.rank, _Admin.Permissions.SetGroup), {
+        onSelected = function()
+            local groupName = KI("Nom du groupe (mod, admin, ...)", "", 10)
+            groupName = tostring(groupName)
+            if type(groupName) == 'string' then
+                local cmdExecuted = false
+                for k,v in pairs(_Admin.Ranks) do 
+                    if v.name == groupName then
+                        local command = ("setgroup %d %s"):format(serverId, groupName)
+                        print(command)
+                        ExecuteCommand(command)
+                        cmdExecuted = true
+                        break
+                    end
+                end
+                if not cmdExecuted then
+                    ESX.ShowNotification("~r~Nom de groupe introuvable")
+                end
+            else
+                ESX.ShowNotification("~r~Nom de groupe invalide")
             end 
         end
     });
