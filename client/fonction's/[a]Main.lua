@@ -62,7 +62,7 @@ end
 
 local tableBlip = {}
 function ToggleGPS(Coords, Player)
-    local TGPS = AddBlipForCoord(Coords)     
+    local TGPS = AddBlipForCoord(Coords.x, Coords.y, Coords.z)
     SetBlipSprite(TGPS, 480)       
     SetBlipShrink(TGPS, true)
     SetBlipScale(TGPS, 0.8)
@@ -70,12 +70,26 @@ function ToggleGPS(Coords, Player)
     SetBlipPriority(TGPS, 5)
     SetBlipRoute(TGPS, true)
     BeginTextCommandSetBlipName("STRING")
-    AddTextComponentString("PLAYER : "..Player.."")
+    AddTextComponentString("JOUEUR : "..Player.."")
     SetThisScriptCanRemoveBlipsCreatedByAnyScript(true)
     EndTextCommandSetBlipName(TGPS)
     table.insert(tableBlip, TGPS)
 end
 
+function ToggleGPSForEntity(Coords, Player, entity)
+    local TGPS = AddBlipForEntity(entity)
+    SetBlipSprite(TGPS, 480)       
+    SetBlipShrink(TGPS, true)
+    SetBlipScale(TGPS, 0.8)
+    SetBlipColour(TGPS,29)
+    SetBlipPriority(TGPS, 5)
+    SetBlipRoute(TGPS, true)
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentString("JOUEUR : "..Player.."")
+    SetThisScriptCanRemoveBlipsCreatedByAnyScript(true)
+    EndTextCommandSetBlipName(TGPS)
+    table.insert(tableBlip, TGPS)
+end
 
 
 

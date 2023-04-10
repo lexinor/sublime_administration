@@ -84,7 +84,8 @@ function _Admin.Panel:PlayerDetails(rank, serverId, localId, name, jobName, grad
     if not _.pointGPS then
         RageUI.Button("Point GPS", "Voir le joueur sur le GPS", {RightLabel = "~c~→→→"}, _Admin:HaveAccess(_.rank, _.aPerms.GPS_View), {
             onSelected = function()
-                ToggleGPS(GetEntityCoords(GetPlayerPed(localId)), _name)
+                ToggleGPSForEntity(GetEntityCoords(GetPlayerPed(localId)), _name, GetPlayerPed(localId))
+                --ToggleGPS(GetEntityCoords(GetPlayerPed(localId)), _name)
                 _.pointGPS = true
             end
         });
