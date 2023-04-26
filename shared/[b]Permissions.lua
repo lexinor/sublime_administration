@@ -46,10 +46,10 @@ _Admin.Permissions = {
             Suicide = {3;2;1};
         };};
         --
-        MyApparence = {access = {3}; inside = {
+        MyApparence = {access = {3;}; inside = {
             ChangeApparence = {3;2;1};
-            SaveApparence = {3};
-            SelectApparence = {3};
+            SaveApparence = {3;};
+            SelectApparence = {3;};
         };};
         -- 
         ItemsOptions = {access = {3;2;1}; inside = {
