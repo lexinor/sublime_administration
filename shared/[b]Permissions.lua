@@ -10,65 +10,65 @@ _Admin.Permissions = {
 
     NoClip = {3;2;1;0};
     SetJob = {3;2;1};
-    SetGroup = {3;2;1};
+    SetGroup = {3;2};
     GiveVehicle = {3,2,1};
 
-    Button_PlayerConnected = { access = {3;2;1}; inside = {
+    Button_PlayerConnected = { access = {3;2;1;0}; inside = {
         --
-        SelectPlayer = { access = {3;2;1}; inside = {
-            Goto = {3;2;1};
-            Bring = {3;2;1};
-            Private_Message = {3;2;1};
-            GPS_View = {3;2;1};
-            Heal = {3;2;1};
-            Revive = {3;2;1};
+        SelectPlayer = { access = {3;2;1;0}; inside = {
+            Goto = {3;2;1;0};
+            Bring = {3;2;1;0};
+            Private_Message = {3;2;1;0};
+            GPS_View = {3;2;1;0};
+            Heal = {3;2;1;0};
+            Revive = {3;2;1;0};
             Kill = {3;2;1};
-            Kick = {3;2;1};
-            Ban = {3;2;1};
-            AddPermissions = {3;2;1};
+            Kick = {3;2;1;0};
+            Ban = {3;2;1;0};
+            AddPermissions = {3;2};
         };};
     };};
 
 
-    Button_myPlayer = { access = {3;2;1}; inside = {
+    Button_myPlayer = { access = {3;2;1;0}; inside = {
         --
-        MyOptions = { access = {3;2;1}; inside = {
+        MyOptions = { access = {3;2;1;0}; inside = {
             Health_Management = {3;2};
             Godmode = {3;2};
-            Invisible = {3;2};
+            Invisible = {3;2;1;0};
             Fast_Run = {3;2;1};
             Fast_Swim = {3;2;1};
             Super_Jump = {3;2;1};
             StayInVehicle = {3;2;1};
             Thermal_Vision = {3;2;1};
-            ShowPlayerName = {3;2;1};
-            Clear_Blood = {3;2;1};
+            ShowPlayerName = {3;2;1;0};
+            Clear_Blood = {3;2;1;0};
             Suicide = {3;2;1};
         };};
         --
-        MyApparence = {access = {3;2;1}; inside = {
+        MyApparence = {access = {3}; inside = {
             ChangeApparence = {3;2;1};
             SaveApparence = {3};
             SelectApparence = {3};
         };};
         -- 
-        ItemsOptions = {access = {3;2}; inside = {
-            GiveItem = {3;2}
+        ItemsOptions = {access = {3;2;1}; inside = {
+            GiveItem = {3;2;1}
         }};
         -- 
-        WeaponsOptions = {access = {3;2}; inside = {
+        WeaponsOptions = {access = {3;2;1}; inside = {
             GiveAllWeapons = {3};
-            GiveSelectedWeapons = {3;2};
+            GiveSelectedWeapons = {3;2;1};
         }};        
     };};
 
 
-    Button_Vehicle = { access = {3;2;1}; inside = {
+    Button_Vehicle = { access = {3;2;1;0}; inside = {
         --
-        ModMenu = { access = {3;2;1}; inside = {
-            Repair = {3;2;1};
+        ModMenu = { access = {3;2;1;0}; inside = {
+            Repair = {3;2;1;0};
             Dirty = {3;2;1};
-            Clean = {3;2;1};
+            Clean = {3;2;1;0};
             Plate = {3;2};
             OpenDoords = {3;};
             CloseDoords = {3;};
@@ -85,13 +85,13 @@ _Admin.Permissions = {
 
     Button_ServerSystem = { access = {3;2;1;0}; inside = {
         WeatherOptions = {3};
-        ReportOptions = {access = {3;2;1}; inside = {
+        ReportOptions = {access = {3;2;1;0}; inside = {
             ClearReports = {3;2;1;0};
         }};
         ClearAllZone = {3;2;1};
-        ClearVehicles = {3;2;1};
-        ClearPeds = {3;2;1};
-        ClearObjects = {3;2;1};
+        ClearVehicles = {3;2;1;0};
+        ClearPeds = {3;2;1;0S};
+        ClearObjects = {3;2;1;0};
 
     };};
 
