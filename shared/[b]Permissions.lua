@@ -76,7 +76,7 @@ _Admin.Permissions = {
             BoostVehicle = {3;};
             FullPerf = {3;};
         };};
-        --
+        
         SaveVehicle = {3;2;1};
         MySavedVehicle = {3;2;1};
         SpawnVehicle = {3;2};
@@ -90,7 +90,7 @@ _Admin.Permissions = {
         }};
         ClearAllZone = {3;2;1};
         ClearVehicles = {3;2;1;0};
-        ClearPeds = {3;2;1;0S};
+        ClearPeds = {3;2;1;0};
         ClearObjects = {3;2;1;0};
 
     };};
